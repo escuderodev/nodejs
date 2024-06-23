@@ -1,0 +1,22 @@
+# === ANOTAÇÕES IMPORTANTES ===
+
+- criar o arquivo package.json => yarn init
+- instalar express => yarn add express 
+- instalar dependencias de desenvolvimento conforme abaixo:
+    - yarn add -D typescript @types/express ts-node-dev 
+- criar pasta src para guardar o código fonte
+- em src, criar pasta server
+- em src, criar arquivo index.ts (principal)
+- em server, criar arquivo server.ts que será o nosso server
+- em server.ts, importar o express
+- criar instância de express => const server = express()
+- exportar  o server => export { server }
+- em server.ts, criar rota get de teste
+- em index.ts, importar nosso server
+- instalar dotenv
+- em .env, variar variáveis de ambiente
+- em server.ts, importar dotenv
+- em index.ts, definir porta do server
+- instalar nodemon => yarn add -D nodemon
+- testar api
+- 

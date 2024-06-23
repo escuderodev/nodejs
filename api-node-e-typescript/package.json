@@ -1,0 +1,19 @@
+{
+  "name": "api-rest-node-typescript",
+  "version": "1",
+  "description": "api",
+  "main": "index.js",
+  "author": "escuderodev",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "nodemon": "^3.1.4",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.5.2"
+  }
+}
