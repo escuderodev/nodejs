@@ -1,4 +1,4 @@
-import 'dotenv'
+import 'dotenv';
 import express from "express";
 
 const server = express();

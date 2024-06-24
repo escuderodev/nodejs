@@ -19,4 +19,7 @@
 - em index.ts, definir porta do server
 - instalar nodemon => yarn add -D nodemon
 - testar api
+- configurar eslint => npx eslint --init 
+- instalar libs complementares =>yarn add -D  @typescript-eslint/eslint-plugin @typescript-eslint/parser
+- instalar no vscode as extensões do eslint e do prettier eslint
 - 
