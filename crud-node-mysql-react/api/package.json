@@ -2,8 +2,9 @@
   "name": "api",
   "version": "1.0.0",
   "main": "index.js",
+  "type": "module",
   "scripts": {
-    "start": "nodemon src/index.js"
+    "start": "nodemon src/server.js"
   },
   "keywords": [],
   "author": "",
