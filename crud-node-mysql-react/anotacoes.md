@@ -41,4 +41,12 @@
     - react-icons => biblioteca de icones 
     - react-toastify => feedback de ações
 - remover arquivos desnecessários mantendo em src apenas o App.js e o index.js
-- 
+- em App.js, remover o header padrão deixando apenas a div
+- em public, deixar apenas o index.html
+- importar no index.html  a fonte poppins 400 500 e 600 do google fonts 
+- em src, criar pasta styles para  montar estilização global
+- em styles, criar o arquivo global.js
+- em App.js, importar GlobalStyle
+- em src, criar a pasta components
+- em components, criar o arquivo Form.js
+- em components, criar o arquivo Grid.js
