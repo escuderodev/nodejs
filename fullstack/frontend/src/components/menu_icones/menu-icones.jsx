@@ -4,15 +4,15 @@ import bag from '../../imagens/sacola.svg';
 
 const MenuIconesContainer = styled.div`
     display: flex;
+`
 
-    .icon {
+const Icon = styled.li`
         display: flex;
         justify-content: center;
         align-items: center;
         height: 100%;
         padding: 0 20px;
         cursor: pointer;
-    }
 `
 
 export const MenuIcones = () => {
@@ -21,7 +21,7 @@ export const MenuIcones = () => {
     return (
         <MenuIconesContainer>
             {icons.map((icon) => (
-            <li className="icon"><img src={icon} alt="icone"/></li>
+            <Icon><img src={icon} alt="icone"/></Icon>
             ))}
         </MenuIconesContainer>
     )

@@ -3,7 +3,7 @@ import { Logo } from '../logo/logo';
 import { Menu } from '../menu/menu';
 import { MenuIcones } from '../menu_icones/menu-icones';
 
-const HeaderContainer = styled.div`
+const HeaderContainer = styled.header`
     background-color: #FFF;
     display: flex;
     justify-content: center;

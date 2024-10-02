@@ -2,8 +2,9 @@ import styled from "styled-components";
 
 const MenuContainer = styled.div`
   display: flex;
+`
 
-  .list_item {
+const ListItem = styled.li`
     font-size: 1rem;
     min-width: 120px;
     display: flex;
@@ -13,12 +14,8 @@ const MenuContainer = styled.div`
     height: 100%;
     padding: 0 5px;
     cursor: pointer;
-  }
-
-  li {
     list-style: none;
-  }
-`;
+`
 
 export const Menu = () => {
   const listItemText = ["CATEGORIAS", "MINHA ESTANTE", "FAVORITOS"];
@@ -26,9 +23,9 @@ export const Menu = () => {
   return (
     <MenuContainer>
       {listItemText.map((item) => (
-        <li className="list_item">
+        <ListItem>
           <p>{item}</p>
-        </li>
+        </ListItem>
       ))}
     </MenuContainer>
   );

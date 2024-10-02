@@ -7,6 +7,7 @@ const LogoContainer = styled.div`
     font-size: 1.5rem;
     align-items: center;
     padding: .5rem;
+    }
     
     span {
     color: #FD8325;
@@ -17,10 +18,14 @@ const LogoContainer = styled.div`
     }
 `
 
+const LogoImage = styled.img`
+    height: 40px;
+`
+
 export const Logo = () => {
     return (
         <LogoContainer>
-            <img src={logo} alt="logo da aplicação" className="logo_imagem"/>
+            <LogoImage src={logo} alt="logo da aplicação"/>
             <p><strong>Alura<span>Books</span></strong></p>
         </LogoContainer>
     )
