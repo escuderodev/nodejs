@@ -14,7 +14,6 @@ const ListItem = styled.li`
     height: 100%;
     padding: 0 5px;
     cursor: pointer;
-    list-style: none;
 `
 
 export const Menu = () => {
