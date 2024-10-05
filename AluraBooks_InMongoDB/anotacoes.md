@@ -46,4 +46,5 @@
 - em routes, criar arquivo routes.js e migrar o código que está em app.js
 - como podemos ter vários arquivos de rotas, vamos criar na pasta routes o arquivo index.js que será o arquivo de entrada das rotas para a aplicação
 - ao criar uma nova rota, sempre lembrar de atualizar o livroRoutes
+- criar model e Schema para Autor e exportar tanto o model quando o schema
 - 
