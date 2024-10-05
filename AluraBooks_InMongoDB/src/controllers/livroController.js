@@ -94,8 +94,19 @@ export class LivroController {
                 res.status(200).json({message: "Livro não encontrado!"});
             }
         } catch (error) {
-            res.status(500).json({message: `Falha ao excluir livro - ${error.message}`})
+            res.status(500).json({message: `Falha ao excluir livro - ${error.message}`});
         }
     };
+
+    static async buscarLivrosPorEditora(req, res) {
+        const editora = req.query.editora;
+
+        try {
+            const livrosPorEditora = await livro.find({publisher: editora});
+            res.status(200).json(livrosPorEditora); 
+        } catch (error) {
+            res.status(500).json({message: `Falha ao buscar livro por editora - ${error.message}`});
+        }
+    }
 };
 
