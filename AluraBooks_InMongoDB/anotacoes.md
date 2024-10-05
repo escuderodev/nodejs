@@ -40,4 +40,10 @@
 - em Livro.js, importar mongoose e criar Schema
 - definir variáveis de ambiente com dotenv
 - importar dotenv como a primeira importação no arquivos server.js
+- em src, criar pasta controllers
+- em controllers, criar os controllers e migrar o código que está em app.js
+- em src, criar pasta routes
+- em routes, criar arquivo routes.js e migrar o código que está em app.js
+- como podemos ter vários arquivos de rotas, vamos criar na pasta routes o arquivo index.js que será o arquivo de entrada das rotas para a aplicação
+- ao criar uma nova rota, sempre lembrar de atualizar o livroRoutes
 - 
