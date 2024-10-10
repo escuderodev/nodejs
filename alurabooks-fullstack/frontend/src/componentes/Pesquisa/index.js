@@ -7,7 +7,7 @@ const PesquisaContainer = styled.section`
         background-image: linear-gradient(90deg, #002F52 35%, #326589 165%);
         color: #FFF;
         text-align: center;
-        padding: 85px 0;
+        padding: 40px 0;
         height: 270px;
         width: 100%;
 `
@@ -25,8 +25,20 @@ const Subtitulo = styled.h3`
         margin-bottom: 40px;
 `
 
+const ListaLivrosContainer = styled.div`
+    display: flex;
+    gap: 1rem
+    flex-wrap: wrap;
+    justify-content: center;
+`
+
+const ItemLivro = styled.div`
+    width: 300px;
+    padding: 1rem;
+`
+
 function Pesquisa() {
-    const [livrosPesquisados, setLivroPesquisado] = useState([])
+    const [livrosPesquisados, setLivroPesquisado] = useState(livros)
 
     return (
         <PesquisaContainer>
@@ -40,15 +52,18 @@ function Pesquisa() {
                     setLivroPesquisado(resultadoDaPesquisa)
                 }}
             />
-            {livrosPesquisados.map(livro => (
-                <>
-                    <p>{livro.titulo}</p>
-                    <img src={livro.src} alt="imagem do livro" />
-                </>
-
-            ))}
+            <ListaLivrosContainer>
+                {livrosPesquisados.map(livro => (
+                    <ItemLivro>
+                        <p>{livro.titulo}</p>
+                        <img src={livro.src} alt="imagem do livro" />
+                    </ItemLivro>
+                ))}
+            </ListaLivrosContainer>
         </PesquisaContainer>
     )
 }
 
 export default Pesquisa
+
+// estilizar lista de livros
