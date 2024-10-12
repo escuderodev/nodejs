@@ -1,27 +1,32 @@
-import { discipline } from "../models/Discipline.js";
+import { DisciplineService } from "../services/disciplineService.js";
 
 export class DisciplineController {
 
     static async disciplinieList(req, res) {
-        try {
-            const disciplinieList = await discipline.find({});
-            res.status(200).json(disciplinieList);
-        } catch (error) {
-            res.status(500).json({message: `Falha ao listar disciplinas - ${error.message}`})
+        const result = await DisciplineService.disciplinieList(req);
+
+        if (Array.isArray(result)) {
+            res.status(200).json(result);
+        } else {
+            res.status(500).json({ message: result })
         }
     };
 
     static async getDisciplineById(req, res) {
         try {
             const id = req.params.id;
-            const disciplineSearch = await discipline.findById(id);
-            if(disciplineSearch) {
+            const disciplineSearch = await DisciplineService.getDisciplineById(id);
+
+            if (disciplineSearch) {
+                // Encontrou a disciplina - Sucesso (200)
                 res.status(200).json(disciplineSearch);
             } else {
-                res.status(200).json({message: "Disciplina não encontrada!"});
+                // Disciplina não encontrada - Não Autorizado (404)
+                res.status(404).json({ message: "Disciplina não encontrada!" });
             }
         } catch (error) {
-            res.status(500).json({message: `Falha ao buscar disciplina por id - ${error.message}`});
+            // Erro ao buscar disciplina - Erro Interno do Servidor (500)
+            res.status(500).json({ message: `Falha ao buscar disciplina por id - ${error.message}` });
         }
     };
 
@@ -43,14 +48,14 @@ export class DisciplineController {
         try {
             const id = req.params.id;
             const disciplineSearch = await discipline.findById(id);
-            
+
             const disciplineUpdated = {
                 title: disciplineSearch.title,
                 createdAt: disciplineSearch.createdAt,
                 updatedAt: Date.now()
             }
-            
-            if(disciplineSearch) {
+
+            if (disciplineSearch) {
                 await discipline.findByIdAndUpdate(id, disciplineUpdated);
                 res.status(200).json({
                     message: "Disciplina atualizada com sucesso!"
@@ -71,7 +76,7 @@ export class DisciplineController {
         try {
             const id = req.params.id;
             const disciplineSearch = await discipline.findById(id);
-            if(disciplineSearch) {
+            if (disciplineSearch) {
                 await discipline.findByIdAndDelete(id);
                 res.status(200).json({
                     message: "Disciplina excluída com sucesso!"
