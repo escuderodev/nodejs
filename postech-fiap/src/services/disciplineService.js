@@ -59,15 +59,14 @@ export class DisciplineService {
         }
     };
 
-    static async disciplineDelete(req, res) {
+    static async disciplineDelete(id) {
         try {
-            const id = req.params.id;
             const disciplineSearch = await discipline.findById(id);
             if(disciplineSearch) {
                 await discipline.findByIdAndDelete(id);
-                return {message: "Disciplina excluída com sucesso!"};
+                return "Disciplina excluída com sucesso!";
             } else {
-                return {message: "Disciplina não encontrada!"};
+                return "Disciplina não encontrada!";
             }
         } catch (error) {
             return {message: `Falha ao excluir disciplina - ${error.message}`};
