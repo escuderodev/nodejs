@@ -3,7 +3,7 @@ import { DisciplineService } from "../services/disciplineService.js";
 export class DisciplineController {
 
     static async disciplinieList(req, res) {
-        const result = await DisciplineService.disciplinieList(req);
+        const result = await DisciplineService.disciplinieList();
 
         if (Array.isArray(result)) {
             res.status(200).json(result);
@@ -31,16 +31,12 @@ export class DisciplineController {
     };
 
     static async disciplineCreate(req, res) {
-        try {
-            const newDiscipline = await discipline.create(req.body);
-            res.status(201).json({
-                message: "Disciplina cadastrada com sucesso!",
-                disciplina: newDiscipline
-            });
-        } catch (error) {
-            res.status(500).json({
-                message: `Falha ao cadastrar disciplina!`
-            });
+        const newDiscipline = await DisciplineService.disciplineCreate(req);
+
+        if(typeof newDiscipline === 'string') {
+            res.status(500).json({message: `Falha ao cadastrar disciplina!`});
+        } else {
+            res.status(201).json(newDiscipline);
         }
     };
 

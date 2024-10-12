@@ -2,7 +2,7 @@ import { discipline } from "../models/Discipline.js";
 
 export class DisciplineService {
 
-    static async disciplinieList(req, res) {
+    static async disciplinieList() {
         try {
             return await discipline.find({});
         } catch (error) {
@@ -23,7 +23,7 @@ export class DisciplineService {
         }
     };
 
-    static async disciplineCreate(req, res) {
+    static async disciplineCreate(req) {
         try {
             const newDiscipline = await discipline.create(req.body);
             return {
@@ -31,7 +31,7 @@ export class DisciplineService {
                 disciplina: newDiscipline
             };
         } catch (error) {
-            return {message: `Falha ao cadastrar disciplina!`};
+            return `Falha ao cadastrar disciplina!`;
         }
     };
 
