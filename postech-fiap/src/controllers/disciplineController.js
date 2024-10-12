@@ -43,10 +43,17 @@ export class DisciplineController {
         try {
             const id = req.params.id;
             const disciplineSearch = await discipline.findById(id);
+            
+            const disciplineUpdated = {
+                title: disciplineSearch.title,
+                createdAt: disciplineSearch.createdAt,
+                updatedAt: Date.now()
+            }
+            
             if(disciplineSearch) {
-                await discipline.findByIdAndUpdate(id, req.body);
+                await discipline.findByIdAndUpdate(id, disciplineUpdated);
                 res.status(200).json({
-                    message: "Disciplina criada com sucesso!"
+                    message: "Disciplina atualizada com sucesso!"
                 });
             } else {
                 res.status(200).json({

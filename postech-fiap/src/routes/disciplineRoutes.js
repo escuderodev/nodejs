@@ -1,5 +1,5 @@
 import express from 'express';
-import { DisciplineController } from '../controllers/disciplineController';
+import { DisciplineController } from '../controllers/disciplineController.js';
 
 const disciplineRoutes = express.Router();
 
