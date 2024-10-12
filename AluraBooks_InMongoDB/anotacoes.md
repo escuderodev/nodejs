@@ -47,4 +47,3 @@
 - como podemos ter vários arquivos de rotas, vamos criar na pasta routes o arquivo index.js que será o arquivo de entrada das rotas para a aplicação
 - ao criar uma nova rota, sempre lembrar de atualizar o livroRoutes
 - criar model e Schema para Autor e exportar tanto o model quando o schema
-- 
