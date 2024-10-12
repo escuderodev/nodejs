@@ -35,22 +35,24 @@ export class DisciplineService {
         }
     };
 
-    static async disciplineUpdate(req, res) {
+    static async disciplineUpdate(req) {
+        const id = req.params.id;
+
         try {
-            const id = req.params.id;
             const disciplineSearch = await discipline.findById(id);
-            
-            const disciplineUpdated = {
-                title: disciplineSearch.title,
-                createdAt: disciplineSearch.createdAt,
-                updatedAt: Date.now()
-            }
-            
+            const { title } = req.body;
+                        
             if(disciplineSearch) {
+                const disciplineUpdated = {
+                    title: title,
+                    createdAt: disciplineSearch.createdAt,
+                    updatedAt: Date.now()
+                }
+
                 await discipline.findByIdAndUpdate(id, disciplineUpdated);
-                return {message: "Disciplina atualizada com sucesso!"};
+                return "Disciplina atualizada com sucesso!";
             } else {
-                return {message: "Disciplina não encontrada!"};
+                return "Disciplina não encontrada!";
             }
         } catch (error) {
             return {message: `Falha ao atualizar disciplina - ${error.message}`};

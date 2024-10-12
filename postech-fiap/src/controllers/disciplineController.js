@@ -41,30 +41,14 @@ export class DisciplineController {
     };
 
     static async disciplineUpdate(req, res) {
-        try {
-            const id = req.params.id;
-            const disciplineSearch = await discipline.findById(id);
+        const result = await DisciplineService.disciplineUpdate(req);
 
-            const disciplineUpdated = {
-                title: disciplineSearch.title,
-                createdAt: disciplineSearch.createdAt,
-                updatedAt: Date.now()
-            }
-
-            if (disciplineSearch) {
-                await discipline.findByIdAndUpdate(id, disciplineUpdated);
-                res.status(200).json({
-                    message: "Disciplina atualizada com sucesso!"
-                });
-            } else {
-                res.status(200).json({
-                    message: "Disciplina não encontrada!"
-                })
-            }
-        } catch (error) {
-            res.status(500).json({
-                message: `Falha ao atualizar disciplina - ${error.message}`
+        if (typeof result === 'string') {
+            res.status(200).json({
+                message: result
             });
+        } else {
+            res.status(500).json(result);
         }
     };
 
