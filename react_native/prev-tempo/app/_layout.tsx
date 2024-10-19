@@ -1,4 +1,3 @@
-import { Header } from "@/components/Shared/Header";
 import { Stack } from "expo-router";
 
 export default function RootLayout() {
