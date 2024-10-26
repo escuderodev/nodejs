@@ -11,4 +11,10 @@
 - criar arquivo Style.tsx para abrigar toda estilização do projeto
 - importar o arquivo Style.tsx em todas as screens
 - em screens, separar nossas telas e styles em pastas
+- instalar extensão R Component
+- a partir de agora, para cada component desejado criaremos sua pasta e dentro 2 arquivos, o component e o styles, sendo que dentro do component digitaremos rnbc e dentro do styles rnso
+- criar component Logo
+- importar Logo em Home
+- colocar todas as imagens dentro da pasta assets
+- para que todas as imagens sejam identificadas pelo typescript devemos criar na raiz do projeto um arquivo chamado index.d.ts e declarar as extenções: declare module "*.png"
 - 
