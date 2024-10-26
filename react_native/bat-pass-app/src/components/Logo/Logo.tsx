@@ -6,9 +6,9 @@ import { styles } from './LogoStyles';
 
 export function Logo() {
     return (
-        <View>
+        <>
             <Text style={styles.title}>BAT PASS GENERATOR</Text>
             <Image source={ImageLogo} style={styles.logo}/>
-        </View>
+        </>
     );
 }
