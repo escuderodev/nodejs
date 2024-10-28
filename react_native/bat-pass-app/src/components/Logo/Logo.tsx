@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, Image } from 'react-native';
+import { Text, Image } from 'react-native';
 import ImageLogo from '../../../assets/bat-logo.png';
 
 import { styles } from './LogoStyles';
