@@ -4,6 +4,7 @@ import styles from "./HomeStyles";
 import { StatusBar } from 'expo-status-bar';
 import { Logo } from "../../components/Logo/Logo";
 import { Display } from "../../components/Display/Display";
+import { GenerateButton } from "../../components/GenerateButton/GenerateButton";
 
 export default function Home() {
     return (
@@ -14,6 +15,9 @@ export default function Home() {
             </View>
             <View style={styles.displayContainer}>
                 <Display/>
+            </View>
+            <View>
+                <GenerateButton/>
             </View>
         </View>
     )
