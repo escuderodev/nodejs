@@ -28,12 +28,12 @@ export class UserController {
     };
 
     static async UserCreate(req, res) {
-        const newUser = await UserService.userCreate(req);
+        const result = await UserService.userCreate(req);
 
-        if(typeof newUser === 'string') {
-            res.status(500).json({message: `Falha ao cadastrar usuário!`});
+        if(typeof result === 'string') {
+            res.status(500).json({message: result});
         } else {
-            res.status(201).json(newUser);
+            res.status(201).json(result);
         }
     };
 

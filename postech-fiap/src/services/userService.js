@@ -31,41 +31,44 @@ export class UserService {
 
             // check requireds fields
             if (!name) {
-                return res.status(422).json({ message: 'name field is required!' })
+                return 'name field is required!';
             }
             if (!email) {
-                return res.status(422).json({ message: 'email field is required!' })
+                return 'email field is required!';
             }
             if (!password) {
-                return res.status(422).json({ message: 'password field is required!' })
+                return 'password field is required!';
             }
             if (password !== confirmPassword) {
-                return res.status(422).json({ message: 'password and confirmPassword are not the same!' })
+                return 'password and confirmPassword are not the same!';
             }
 
             // check if users not exists
-            const userExists = await user.findOne(email)
+            const userExists = await user.findOne({email})
 
             if (userExists) {
-                return res.status(422).json({ message: "mail already registered!" })
+                return "mail already registered!";
             }
 
             // create password encoded
             const salt = await bcrypt.genSalt(12) //add dificult
             const passwordHash = await bcrypt.hash(password, salt) //create password encoded
 
-            const user = {
+            const newUser = {
                 name: name,
                 email: email,
                 password: passwordHash
             }
-            const newUser = await user.create(user);
+
+            await user.create(newUser);
             return {
                 message: "Usuário cadastrada com sucesso!",
-                disciplina: newUser
             };
         } catch (error) {
-            return `Falha ao cadastrar usuário!`;
+            return {
+                message: "Falha ao cadastrar usuário!",
+                erro: error.message
+            };
         }
     };
 
@@ -100,9 +103,9 @@ export class UserService {
             const userSearch = await user.findById(id);
             if (userSearch) {
                 await user.findByIdAndDelete(id);
-                return "Usuário excluída com sucesso!";
+                return "Usuário excluído com sucesso!";
             } else {
-                return "Usuário não encontrada!";
+                return "Usuário não encontrado!";
             }
         } catch (error) {
             return { message: `Falha ao excluir usuário - ${error.message}` };
@@ -113,7 +116,8 @@ export class UserService {
         const { email, password } = req.body;
 
         // check if users not exists
-        const userExists = await user.findOne(email)
+        const userExists = await user.findOne({email}).select('+password');
+        console.log(userExists)
 
         // check if users not exists
         if (!userExists) {
@@ -135,7 +139,7 @@ export class UserService {
         }
     };
 
-    async checkToken(req, res, next) {
+    static async checkToken(req, res, next) {
         const tokenHeader = req.headers['authorization']
         const token = tokenHeader && tokenHeader.split(" ")[1]
     
