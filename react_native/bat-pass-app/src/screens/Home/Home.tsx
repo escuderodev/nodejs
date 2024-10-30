@@ -1,9 +1,8 @@
 import React from "react";
-import { Text, View, TouchableOpacity } from "react-native";
+import { View } from "react-native";
 import styles from "./HomeStyles";
 import { StatusBar } from 'expo-status-bar';
 import { Logo } from "../../components/Logo/Logo";
-import { Display } from "../../components/Display/Display";
 import { GenerateButton } from "../../components/GenerateButton/GenerateButton";
 
 export default function Home() {
@@ -14,9 +13,6 @@ export default function Home() {
                 <Logo/>
             </View>
             <View style={styles.displayContainer}>
-                <Display/>
-            </View>
-            <View>
                 <GenerateButton/>
             </View>
         </View>

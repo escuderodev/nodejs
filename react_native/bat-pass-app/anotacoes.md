@@ -17,5 +17,6 @@
 - importar Logo em Home
 - colocar todas as imagens dentro da pasta assets
 - para que todas as imagens sejam identificadas pelo typescript devemos criar na raiz do projeto um arquivo chamado index.d.ts e declarar as extenções: declare module "*.png"
-- como na screen retornaremos uma View, noc components devemos retornar um Fragment
-- 
+- como na screen retornaremos uma View, nos components devemos retornar um Fragment
+- criar a pasta service
+- em service, implementar nossa logica
