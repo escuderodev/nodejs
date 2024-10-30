@@ -20,3 +20,10 @@
 - como na screen retornaremos uma View, nos components devemos retornar um Fragment
 - criar a pasta service
 - em service, implementar nossa logica
+- em GenerateButton, importar lógica do service para geração de senha ao clicar no botão
+- em GenerateButton, criar function GenerateButton()
+- atribuir a função ao botão GENERATE
+- para copiar a senha gerada, instalar a lib: npx expo install expo-clipboard
+- em GenerateButton, importar o clipboard: import * as Clipboard from 'expo-clipboard'
+- em GenerateButton, criar function handleCopyButton() para copiar o valor atual do useState
+- atribuir a função ao botão COPY

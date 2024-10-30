@@ -3,6 +3,7 @@ import { Text, TouchableOpacity } from 'react-native';
 import { Display } from '../Display/Display';
 import { styles } from './GenerateButtonStyles';
 import passGenerator from '../../services/passGeneratorService';
+import * as Clipboard from 'expo-clipboard'
 
 export function GenerateButton() {
   const [pass, setPass] = useState('')
@@ -10,6 +11,10 @@ export function GenerateButton() {
   function handleGenerateButton() {
     let tokenGenerator = passGenerator()
     setPass(tokenGenerator)
+  }
+
+  function handleCopyButton() {
+    Clipboard.setStringAsync(pass)
   }
 
   return (
@@ -24,7 +29,7 @@ export function GenerateButton() {
 
       <TouchableOpacity
         style={styles.button}
-        onPress={() => { console.log('Copiou!') }}
+        onPress={handleCopyButton}
       >
         <Text style={styles.text}>⚡ COPY</Text>
       </TouchableOpacity>
