@@ -9,6 +9,7 @@ export function InputForm() {
       <TextInput
         style={styles.input}
         placeholder='Digite seu email'
+        keyboardType='email-address'
       />
       <TextInput
         style={styles.input}
