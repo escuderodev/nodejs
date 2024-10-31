@@ -11,6 +11,7 @@ export const styles = StyleSheet.create({
   title: {
     color: '#e5bf3c',
     fontSize: 22,
-    fontWeight: 'bold'
+    fontWeight: 'bold',
+    marginBottom: 5
   }
 });
