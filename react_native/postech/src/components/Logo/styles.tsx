@@ -4,7 +4,7 @@ export const styles = StyleSheet.create({
   logo: {
     resizeMode: "contain",
     height: 180,
-    marginBottom: 24,
+    marginBottom: 10,
     marginTop: 16
   },
   title: {
