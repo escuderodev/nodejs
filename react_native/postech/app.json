@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "bat-pass-app",
-    "slug": "bat-pass-app",
+    "name": "postech",
+    "slug": "postech",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -18,16 +18,10 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      },
-      "package": "com.anonymous.batpassapp"
+      }
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    },
-    "extra": {
-      "eas": {
-        "projectId": "72b6bc6f-4376-4ccf-995b-59d41cf80825"
-      }
     }
   }
 }
