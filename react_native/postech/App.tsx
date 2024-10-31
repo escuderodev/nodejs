@@ -1,7 +1,7 @@
-import { FormDiscipline } from "./src/screens/formDiscipline/FormDiscipline";
+import { FormLogin } from "./src/screens/formLogin/FormLogin";
 
 export default function App() {
   return (
-    <FormDiscipline/>
+    <FormLogin />
   );
 };

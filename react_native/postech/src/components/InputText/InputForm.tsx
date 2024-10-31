@@ -1,5 +1,6 @@
 import React from 'react';
-import { Text, TextInput } from 'react-native';
+import { TextInput } from 'react-native';
+import { Button } from '../Button/Button'
 import { styles } from './styles';
 
 export function InputForm() {
@@ -14,6 +15,7 @@ export function InputForm() {
         placeholder='Digite sua senha'
         secureTextEntry={true}
       />
+      <Button />
     </>
   );
 }
