@@ -3,15 +3,15 @@ import { StyleSheet } from 'react-native';
 export const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#38a69d'
+    backgroundColor: '#333333'
   },
   logo: {
-    width: '100%',
+    width: '90%',
     resizeMode: 'contain'
   },
   containerLogo: {
     flex: 2,
-    backgroundColor: '#38a69d',
+    backgroundColor: '#333333',
     justifyContent: 'center',
     alignItems: 'center'
   },
@@ -31,11 +31,13 @@ export const styles = StyleSheet.create({
 
   },
   subTitle: {
-    color: '#a1a1a1'
+    color: '#a1a1a1',
+    fontSize: 18,
+    fontWeight: '500'
   },
   button: {
     position: 'absolute',
-    backgroundColor: '#38a69d',
+    backgroundColor: '#333333',
     borderRadius: 50,
     padding: 8,
     width: '60%',
