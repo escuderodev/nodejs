@@ -6,7 +6,7 @@ export const styles = StyleSheet.create({
     backgroundColor: '#333333'
   },
   logo: {
-    width: '90%',
+    width: '100%',
     resizeMode: 'contain'
   },
   containerLogo: {

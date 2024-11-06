@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Text, Image, TouchableOpacity } from 'react-native';
-import Logo from '../../assets/notepad.png'
+import Logo from '../../assets/caderno.png'
 import { styles } from './styles';
 import * as Animatable from 'react-native-animatable'; //lib para animações
 import { useNavigation } from "@react-navigation/native"; //lib para navegação
