@@ -20,7 +20,7 @@ export class UserController {
             if (userSearch) {
                 res.status(200).json(userSearch);
             } else {
-                res.status(404).json({ message: "Usuário não encontrada!" });
+                res.status(404).json({ message: "Usuário não encontrado!" });
             }
         } catch (error) {
             res.status(500).json({ message: `Falha ao buscar usuário por id - ${error.message}` });
@@ -66,7 +66,7 @@ export class UserController {
         try {
             const result = await UserService.login(req);
             return res.status(200).json({
-                message: 'user authnticated',
+                message: 'user authenticated',
                 result: result
             })
         } catch (error) {

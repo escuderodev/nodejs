@@ -8,7 +8,7 @@ export class UserService {
         try {
             return await user.find({});
         } catch (error) {
-            return { message: `Falha ao listar usuários - ${error.message}` };
+            return { message: `failed to get all users - ${error.message}` };
         }
     };
 
@@ -18,10 +18,10 @@ export class UserService {
             if (userSearch) {
                 return userSearch;
             } else {
-                return { message: "Usuário não encontrado!" };
+                return { message: "user not found!" };
             }
         } catch (error) {
-            return { message: `Falha ao buscar usuário por id - ${error.message}` };
+            return { message: `failed to get user by id - ${error.message}` };
         }
     };
 
@@ -62,11 +62,11 @@ export class UserService {
 
             await user.create(newUser);
             return {
-                message: "Usuário cadastrada com sucesso!",
+                message: "user created!",
             };
         } catch (error) {
             return {
-                message: "Falha ao cadastrar usuário!",
+                message: "failed to create user!",
                 erro: error.message
             };
         }
@@ -89,12 +89,12 @@ export class UserService {
                 }
 
                 await user.findByIdAndUpdate(id, userUpdated);
-                return "Usuário atualizada com sucesso!";
+                return "user updated!";
             } else {
-                return "Usuário não encontrada!";
+                return "user not found!";
             }
         } catch (error) {
-            return { message: `Falha ao atualizar usuário - ${error.message}` };
+            return { message: `failed to update user - ${error.message}` };
         }
     };
 
@@ -103,12 +103,12 @@ export class UserService {
             const userSearch = await user.findById(id);
             if (userSearch) {
                 await user.findByIdAndDelete(id);
-                return "Usuário excluído com sucesso!";
+                return "user deleted!";
             } else {
-                return "Usuário não encontrado!";
+                return "user not found!";
             }
         } catch (error) {
-            return { message: `Falha ao excluir usuário - ${error.message}` };
+            return { message: `failed to delete user - ${error.message}` };
         }
     };
 
@@ -117,7 +117,6 @@ export class UserService {
 
         // check if users not exists
         const userExists = await user.findOne({email}).select('+password');
-        console.log(userExists)
 
         // check if users not exists
         if (!userExists) {
@@ -175,7 +174,7 @@ export class UserService {
           const userId = decoded.id;
           return userId; // Retorne o ID do usuário se necessário
         } catch (err) {
-          console.error('Token inválido:', (err).message);
+          console.error('Token is not valid:', (err).message);
           return null; // Ou lidar com o erro de outra forma
         }
     };
